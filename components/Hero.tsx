@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
           alt="camp"
           width={50}
           height={50}
-          className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
+          className="absolute lg:left-[120px] lg:top-[50px] w-10 lg:w-[50px] "
         />
         <h1 className="bold-52 lg:bold-88">
           Putuk Truno <br /> Camp Area
@@ -22,7 +23,57 @@ const Hero = () => {
           adventure around the world in just one app
         </p>
         <div className="my-11 flex flex-wrap gap-5 ">
-          <div className="flex items-center gap-2 "></div>
+          <div className="flex items-center gap-2 ">
+            {Array(5)
+              .fill(1)
+              .map((_, index) => (
+                <Image
+                  src="/star.svg"
+                  key={index}
+                  alt="start"
+                  width={24}
+                  height={24}
+                />
+              ))}
+          </div>
+          <p className="bold-16 lg:bold-20 text-blue-70">
+            198k{" "}
+            <span className="regular-16 lg:regular-20 ml-1">
+              Excellent Reviews
+            </span>
+          </p>
+        </div>
+        <div className="flex flex-col w-full gap-3 sm:flex-row">
+          <Button type="button" title="Download App" variant="btn_green" />
+          <Button
+            type="button"
+            title="How we work?"
+            icon="/play.svg"
+            variant="btn_white_text"
+          />
+        </div>
+      </div>
+
+      <div className="relative flex flex-1 items-start border-2 border-blue-500">
+        <div className="relative flex z-20 w-[268px] flex-col gap-8 rounded-3xl bg-green-90 px-7 py-8">
+          <div className="flex flex-col">
+            <div className="flexBetween">
+              <p className="regular-16 text-gray-20">Location</p>``
+              <Image src="/close.svg" alt="close" width={24} height={24} />
+            </div>
+            <p className="bold-20 text-white ">Aguas Calientes</p>
+          </div>
+
+          <div className="flexBetween ">
+            <div className="flex flex-col">
+              <p className="regular-16 block text-gray-20">Distance</p>
+              <p className="bold-18 text-white ">190.66 Km</p>
+            </div>
+            <div className="flex flex-col">
+              <p className="regular-16 block text-gray-20">Elevation</p>
+              <p className="bold-18 text-white ">2.3434 Km</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
